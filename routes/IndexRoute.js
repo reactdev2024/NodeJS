@@ -8,7 +8,8 @@ const router = express.Router(); //  use for manage route & create routes
 // we can get paramter name & body or header using req object
 // we can send response using res object like json or web pages
 router.get('/index', (req, res, next) => {
-    res.send('<h1>Hello World..!');
+    // res.send('<h1>Hello World..!');
+    res.render('index.ejs');
 });
 
 module.exports = router;
