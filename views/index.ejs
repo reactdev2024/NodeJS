@@ -1,14 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-
 <body>
     <h2>First Template Using ejs template engine</h2>
+    <table style="border: 1px solid black;border-collapse: collapse;">
+        <tr>
+            <th style="border: 1px solid black;border-collapse: collapse;">Name</th>
+            <th style="border: 1px solid black;border-collapse: collapse;">Gender</th>
+            <th style="border: 1px solid black;border-collapse: collapse;">Email</th>
+        </tr>
+        <% for(var i=0; i < user.length; i++) { %>
+            <tr>
+                <td style="border: 1px solid black;border-collapse: collapse;">
+                    <%= user[i].name %>
+                </td>
+                <td style="border: 1px solid black;border-collapse: collapse;">
+                    <%= user[i].gender %>
+                </td>
+                <td style="border: 1px solid black;border-collapse: collapse;">
+                    <%= user[i].email %>
+                </td>
+            </tr>
+            <% } %>
+    </table>
 </body>
 
 </html>
