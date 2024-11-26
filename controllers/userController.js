@@ -25,6 +25,11 @@ exports.GetUserByID = async (req, res, next) => {
     res.setHeader('Set-Cookie', 'isLogin=true');
     // read cookie
     console.log(req.get('Cookie'));
+
+    // create session
+    req.session.isLogin = true;
+    console.log(req.session.isLogin);//read session
+
     const id = req.params.id; // get id query string params from URL
     const user = await User.findById(id);
     if (user) {

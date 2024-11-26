@@ -2,7 +2,7 @@ const express = require('express'); //import express package to use express feat
 const connectDB = require('./util/dbConnection');
 const indexRouter = require('./routes/IndexRoute'); //import index router in app.js file
 const userRouter = require('./routes/userRoute'); //import index router in app.js file
-
+const session = require('express-session');  // import express-session to use session
 const dotenv = require('dotenv');
 dotenv.config(); // import .env file to Use environment variable
 
@@ -10,6 +10,8 @@ const app = express();  // in app variable we store reference of expresss packag
 app.use(express.json());
 app.set('view engine', 'ejs'); //register template engine
 app.set('views', 'views');     // also inform express our views default folder is views
+// session added in middleware to use in application
+app.use(session({ secret: 'my secret', resave: false, saveUninitialized: false }));
 
 
 app.use(indexRouter); // register index router
