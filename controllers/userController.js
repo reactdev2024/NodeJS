@@ -23,6 +23,7 @@ exports.CreateUser = async (req, res, next) => {
 exports.GetUserByID = async (req, res, next) => {
     const id = req.params.id; // get id query string params from URL
     const user = await User.findById(id);
+
     if (user) {
         res.render('./user.ejs', { user });
         // res.status(200).json({ status: 'success', user });
